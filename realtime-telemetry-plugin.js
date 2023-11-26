@@ -29,6 +29,7 @@ export function RealtimeTelemetryPlugin() {
                     id: Date.now(),
                 });
             }
+            console.log(message.payloadString)
         };
 
         var provider = {
