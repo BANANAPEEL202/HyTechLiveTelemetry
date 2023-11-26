@@ -1,6 +1,6 @@
 import * as openmct from 'openmct/dist/openmct.js'
 import 'openmct/dist/espressoTheme.css'
-import 'openmct/dist/snowTheme.css'
+
 import { DictionaryPlugin } from './dictionary-plugin.js'
 import { RealtimeTelemetryPlugin } from './realtime-telemetry-plugin.js'
 
