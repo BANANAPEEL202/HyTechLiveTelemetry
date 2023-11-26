@@ -1,7 +1,6 @@
 import * as openmct from 'openmct/dist/openmct.js'
 import 'openmct/dist/espressoTheme.css'
-import 'openmct/dist/inMemorySearchWorker.js'
-import 'openmct/dist/generatorWorker.js'
+
 import { DictionaryPlugin } from './dictionary-plugin.js'
 import { HistoricalTelemetryPlugin } from './historical-telemetry-plugin.js'
 import { RealtimeTelemetryPlugin } from './realtime-telemetry-plugin.js'
