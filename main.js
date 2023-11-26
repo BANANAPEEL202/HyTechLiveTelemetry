@@ -1,5 +1,3 @@
-import './style.css'
-
 import * as openmct from 'openmct/dist/openmct.js'
 import { DictionaryPlugin } from './dictionary-plugin.js'
 import { RealtimeTelemetryPlugin } from './realtime-telemetry-plugin.js'
