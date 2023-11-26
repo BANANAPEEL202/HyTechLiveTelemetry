@@ -1,8 +1,9 @@
 /**
  * Basic historical telemetry plugin.
+ * YOU NEED THIS due to a stupid OPENMCT bug
  */
 
-function HistoricalTelemetryPlugin() {
+export function HistoricalTelemetryPlugin() {
     return function install (openmct) {
         var provider = {
             supportsRequest: function (domainObject) {

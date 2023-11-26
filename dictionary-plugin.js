@@ -1,10 +1,9 @@
+
 function getDictionary() {
-    return http.get('/dictionary.json')
-        .then(function (result) {
-            return result.data;
-        });
+    return fetch('dictionary.json')
+        .then((res) => res.json());
 }
-folders = ["BMS", "DASHBOARD", "MCU", "mc_fl", "mc_fr", "mc_rl", "mc_rr", "ENERGY_METER", "IMU", "TPMS"]
+const folders = ["BMS", "DASHBOARD", "MCU", "mc_fl", "mc_fr", "mc_rl", "mc_rr", "ENERGY_METER", "IMU", "TPMS"]
 var objectProvider = {
     get: function (identifier) {
         return getDictionary().then(function (dictionary) {
@@ -223,7 +222,7 @@ var compositionProviderTPMS = {
     }
 };
 
-var DictionaryPlugin = function (openmct) {
+export const DictionaryPlugin = function (openmct) {
     return function install(openmct) {
         openmct.objects.addRoot({
             namespace: 'dashboard',
