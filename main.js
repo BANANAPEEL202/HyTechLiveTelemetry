@@ -2,6 +2,7 @@ import * as openmct from 'openmct/dist/openmct.js'
 import 'openmct/dist/espressoTheme.css'
 
 import { DictionaryPlugin } from './dictionary-plugin.js'
+import { HistoricalTelemetryPlugin } from './historical-telemetry-plugin.js'
 import { RealtimeTelemetryPlugin } from './realtime-telemetry-plugin.js'
 
 
@@ -160,7 +161,7 @@ const THIRTY_SECONDS = 30 * 1000;
       openmct.install(openmct.plugins.Espresso());
 
       openmct.install(DictionaryPlugin());
-      //openmct.install(HistoricalTelemetryPlugin());
+      openmct.install(HistoricalTelemetryPlugin()); //u need this for stupid openmct reasons see https://github.com/nasa/openmct/issues/3641
       openmct.install(RealtimeTelemetryPlugin());
 
       openmct.start();
