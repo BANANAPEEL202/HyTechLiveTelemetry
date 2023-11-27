@@ -4,7 +4,7 @@
 import Paho from 'paho-mqtt'; 
 export function RealtimeTelemetryPlugin() {
     return function (openmct) {
-        var client = new Paho.Client('localhost', 80, "/", "unique_ID");
+        var client = new paho.Client('localhost', 80, "/", "unique_ID");
         var globalChannels = [];
         const myClientConnected = function () {
             console.log("connected");
@@ -47,7 +47,7 @@ export function RealtimeTelemetryPlugin() {
                 return function unsubscribe() {
                     //delete listener[(domainObject.identifier.key)];
                     //client.unsubscribe(domainObject.identifier.key);
-                    //client.disconnect();
+                    client.disconnect();
                 };
             }
         };
