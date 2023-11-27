@@ -1,5 +1,5 @@
 import * as openmct from 'openmct/dist/openmct.js'
-//import 'openmct/dist/espressoTheme.css'
+import 'openmct/dist/espressoTheme.css'
 import 'openmct/dist/generatorWorker.js'
 
 import { DictionaryPlugin } from './dictionary-plugin.js'
