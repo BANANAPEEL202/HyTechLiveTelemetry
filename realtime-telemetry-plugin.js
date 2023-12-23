@@ -11,6 +11,7 @@ export function RealtimeTelemetryPlugin() {
             //console.log("Channel: "+ (domainObject.identifier.key).replaceAll(".", "/"));
             for (let i = 0; i < globalChannels.length; i++) {
                 client.subscribe(globalChannels[i], 0);
+                console.log("subscribed")
             }
             //client.subscribe("MOTOR_CONTROLLER/mc_rl/torque_current", 0);
         }
@@ -21,6 +22,7 @@ export function RealtimeTelemetryPlugin() {
         var listener = {};
 
         client.onMessageArrived = function (message) {
+            let channel;
             channel = (message.destinationName.replaceAll("/", "."));
             if (listener[channel]) {
                 listener[channel]({
@@ -32,13 +34,14 @@ export function RealtimeTelemetryPlugin() {
             console.log(message.payloadString)
         };
 
-        var provider = {
+        var provider = {          
             supportsSubscribe: function (domainObject) {
                 return domainObject.type === 'dashboard.telemetry';
             },
             subscribe: function (domainObject, callback) {
                 listener[domainObject.identifier.key] = callback;
                 globalChannels.push((domainObject.identifier.key).replaceAll(".", "/"));
+         
                 if (client.isConnected()) {
                     client.disconnect();
                 }
@@ -47,7 +50,7 @@ export function RealtimeTelemetryPlugin() {
                 return function unsubscribe() {
                     //delete listener[(domainObject.identifier.key)];
                     //client.unsubscribe(domainObject.identifier.key);
-                    client.disconnect();
+                    //client.disconnect();
                 };
             }
         };
