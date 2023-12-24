@@ -5,7 +5,7 @@ import Paho from 'paho-mqtt';
 export function RealtimeTelemetryPlugin() {
     return function (openmct) {
         //var client = new Paho.Client('3.134.2.166', 1883, "/", "unique_ID");
-        var client = new Paho.Client('mqtt://3.134.2.166:1883/mqtt', "unique_ID");
+        var client = new Paho.Client('mqtt://3.134.2.166:1883', "unique_ID");
         var globalChannels = [];
         const myClientConnected = function () {
             console.log("connected");
