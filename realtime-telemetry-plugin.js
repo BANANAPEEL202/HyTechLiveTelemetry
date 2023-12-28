@@ -55,7 +55,7 @@ export function RealtimeTelemetryPlugin() {
                 return function unsubscribe() {
                     //delete listener[(domainObject.identifier.key)];
                     //client.unsubscribe(domainObject.identifier.key);
-                    //client.disconnect();
+                    client.disconnect();
                 };
             }
         };
