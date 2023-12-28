@@ -4,7 +4,7 @@
 import Paho from 'paho-mqtt'; 
 export function RealtimeTelemetryPlugin() {
     return function (openmct) {
-        var client = new Paho.Client('3.134.2.166', 1883, "/", "unique_ID");
+        var client = new Paho.Client('3.134.2.166', 1884, "/", "unique_ID");
         //var client = new Paho.Client('mqtt://3.134.2.166:1883', "unique_ID");
         var globalChannels = [];
         const myClientConnected = function () {
@@ -16,7 +16,6 @@ export function RealtimeTelemetryPlugin() {
             }
             //client.subscribe("MOTOR_CONTROLLER/mc_rl/torque_current", 0);
         }
-
 
 
 
